@@ -10,7 +10,15 @@ class ASGraph:
         self._build(rel_df)
 
     def _build(self, rel_df):
-        raise NotImplementedError
+        for a, b, rel in rel_df[["as1", "as2", "rel"]].itertuples(index=False):
+            if rel == -1:
+                self.customers[a].add(b)
+                self.providers[b].add(a)
+            else:
+                self.peers[a].add(b)
+                self.peers[b].add(a)
+            self.neighbors[a].add(b)
+            self.neighbors[b].add(a)
 
     @property
     def nodes(self):

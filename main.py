@@ -18,6 +18,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("tasks", nargs="*", type=int, default=list(range(1, 8)))
     tasks = set(parser.parse_args().tasks)
+    config.OUT_DIR.mkdir(exist_ok=True)
 
     if 1 in tasks:
         task1_classification.run()
