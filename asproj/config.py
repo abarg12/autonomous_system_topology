@@ -1,7 +1,7 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-DATA_DIR = ROOT
+DATA_DIR = ROOT / "data"
 OUT_DIR = ROOT / "output"
 
 TYPES_2015 = DATA_DIR / "20150801.as2types.txt"
