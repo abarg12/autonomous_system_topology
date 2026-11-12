@@ -1,0 +1,7 @@
+*.txt
+!requirements.txt
+*.pfx2as
+*.pdf
+output/
+__pycache__/
+.venv/
